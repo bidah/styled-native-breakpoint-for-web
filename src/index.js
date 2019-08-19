@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import styled, { ThemeProvider } from "styled-components/native";
 import { View, Dimensions, Platform } from "react-native";
 
-export default function ThemeProvider({ theme = {}, children }) {
+export default function ThemeProvider({ theme = {}, breakpoints: customBreakpoints  = {} children }) {
   let [deviceWidth, setDeviceWidth] = useState(0);
 
-  let [breakpoints, setBreakpoints] = useState({
+  let [breakpoints, setBreakpoints] = useState(Object.keys(customBreakpoints).length ? customBreakpoints : {
     tablet: 768,
     desktop: 992,
     lgDesktop: 1200

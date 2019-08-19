@@ -1,2 +1,59 @@
 # styled-native-breakpoint-for-web
-Add breakpoints to your styled components to use for the web in your Universal Expo Web project
+
+Add breakpoints to your Styled Components to use for the web in your Universal Expo Web project.
+
+## Introduction
+
+When creating a <Expo universal app you need desktop breakpoints to deliver a good experience for the web. Your mobile layout is just meant for the mobile web, you are missing the desktop view.
+
+Styled Components media queries are meant to work just for the web so they are of no use when creating styled components that need breakpoints to work with [React Native For Web](https://github.com/necolas/react-native-web) that is what Expo is using to create your web build.
+
+Same as web media queries by using the library if you resize your browser window and you hit a breakpoint, layout will change accordingly.
+
+## Instalation
+
+```
+npm install -s styled-native-breakpoint-for-web
+```
+
+## Usage
+
+Add `Provider` as a wrapper to `App.js`. If you are already using the `Provider` component provided by `styled-components/native` replace it with this one.
+
+You can add your theme in the `theme` prop or don't use the prop at all if you are not using a theme right now.
+
+```javascript
+//App.js
+import styled from "styled-components/native";
+import ThemeProvider from "styled-native-breakpoint-for-web";
+
+<ThemeProvider>// ...your App.js content here</ThemeProvider>;
+```
+
+Setup with a current theme:
+
+```javascript
+//App.js
+import styled from "styled-components/native";
+import ThemeProvider from "styled-native-breakpoint-for-web";
+import myTheme from "my-theme-path";
+
+<ThemeProvider theme={myTheme}>// ...your App.js content here</ThemeProvider>;
+```
+
+```javascript
+import styled from "styled-components/native";
+
+const MyComponent = styled.View`
+  flex: 1;
+  background: orangered;
+  ${({ theme: { mq } }) =>
+    mq.desktop(css`
+      background: deepskyblue;
+    `)}
+`;
+```
+
+## Demo
+
+Expo snack

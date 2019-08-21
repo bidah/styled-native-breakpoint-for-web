@@ -1,18 +1,22 @@
-import React, { useState, useEffect } from "react";
-import styled, { ThemeProvider } from "styled-components/native";
-import { View, Dimensions, Platform } from "react-native";
+import React, { useState, useEffect } from 'react';
+import styled, { ThemeProvider as ThemeProviderStyled } from 'styled-components/native';
+import { View, Dimensions, Platform } from 'react-native';
 
-export default function ThemeProvider({ theme = {}, breakpoints: customBreakpoints  = {} children }) {
+function ThemeProvider({ theme = {}, breakpoints: customBreakpoints = {}, children }) {
   let [deviceWidth, setDeviceWidth] = useState(0);
 
-  let [breakpoints, setBreakpoints] = useState(Object.keys(customBreakpoints).length ? customBreakpoints : {
-    tablet: 768,
-    desktop: 992,
-    lgDesktop: 1200
-  });
+  let [breakpoints, setBreakpoints] = useState(
+    Object.keys(customBreakpoints).length
+      ? customBreakpoints
+      : {
+          tablet: 768,
+          desktop: 992,
+          lgDesktop: 1200,
+        }
+  );
 
   useEffect(() => {
-    setDeviceWidth(Dimensions.get("window").width);
+    setDeviceWidth(Dimensions.get('window').width);
   }, []);
 
   const handleLayout = event => {
@@ -29,24 +33,26 @@ export default function ThemeProvider({ theme = {}, breakpoints: customBreakpoin
       let [, width] = Object.entries(breakpoints)[index];
 
       return (strings, ...values) => {
-        if (Platform.OS === "web" && deviceWidth >= width) {
+        if (Platform.OS === 'web' && deviceWidth >= width) {
           return strings.reduce((result, string, i) => {
-            return `${result}${string}${values[i] || ""}`;
-          }, "");
+            return `${result}${string}${values[i] || ''}`;
+          }, '');
         }
-        return "";
+        return '';
       };
     });
   };
 
   return (
-    <ThemeProvider
+    <ThemeProviderStyled
       theme={{
         ...theme,
-        ...{ bp: breakpointFactory() }
-      }}
-    >
+        ...{ bp: breakpointFactory() },
+      }}>
       <OnLayout>{children}</OnLayout>
-    </ThemeProvider>
+    </ThemeProviderStyled>
   );
 }
+
+export default ThemeProvider;
+export { ThemeProvider };

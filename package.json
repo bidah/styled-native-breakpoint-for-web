@@ -3,13 +3,25 @@
   "version": "0.0.1",
   "description": "Add breakpoints to your styled components to use for the web in your Universal Expo Web project",
   "main": "src/index.js",
-  "repository": "https://github.com/bidah/styled-components-mq-for-web",
+  "repository": "https://github.com/bidah/styled-native-breakpoint-for-web",
+  "bugs": {
+    "url": "https://github.com/bidah/styled-native-breakpoint-for-web/issues"
+  },
+  "homepage": "https://github.com/bidah/styled-native-breakpoint-for-web#readme",
   "author": "Rodrigo Figueroa",
   "license": "MIT",
   "private": false,
   "peerDependencies": {
+    "fbjs": "*",
     "react-native": "*",
-    "fbjs": "*"
+    "styled-components": "*"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-preset-expo": "^5.2.0",
+    "styled-components": "5.0.0-beta.8"
   },
   "keywords": [
     "expo",

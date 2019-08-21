@@ -8,7 +8,7 @@ When creating a [Expo](https://expo.io/) universal app using [Styled Components]
 
 Styled Components media queries are meant to work just for the web so they are of no use when creating styled components that need breakpoints to work with [React Native For Web](https://github.com/necolas/react-native-web) which is what Expo is using to create your web build.
 
-Same as web media queries by using the library if you resize your browser window and you hit a breakpoint, layout will change accordingly.
+NOTE: Same as web media queries, by using the library, if you resize your browser window and you hit a breakpoint, layout will change accordingly.
 
 ## Instalation
 
@@ -16,11 +16,11 @@ Same as web media queries by using the library if you resize your browser window
 npm install -s styled-native-breakpoint-for-web
 ```
 
-## Usage
+## Styled Components Usage
 
-Add `Provider` as a wrapper to `App.js`. If you are already using the `Provider` component provided by `styled-components/native` replace it with this one.
+Add `ThemeProvider` as a wrapper to `App.js`. If you are already using the `ThemeProvider` component provided by `styled-components/native` replace it with this one.
 
-You can add your theme in the `theme` prop or don't use the prop at all if you are not using a theme right now.
+You can add your theme in the `theme` prop or don't use it at all if you are not using a theme right now.
 
 ```javascript
 //App.js
@@ -66,7 +66,7 @@ By default you get to use 3 breakpoints from `mq` that have the following values
 }
 ```
 
-To setup new breakpoints pass the `breakpoints` prop to `ThemeProviders` with an object with the key as the name of the breakpoint and the value as number representing the minimum width. Take note that previous defaults will be overwritten.
+To setup new breakpoints pass the `breakpoints` prop to `ThemeProvider` with an object with the key as the name of the breakpoint and the value as number representing the minimum width. Take note that previous defaults will be overwritten.
 
 ```javascript
 <ThemeProvider

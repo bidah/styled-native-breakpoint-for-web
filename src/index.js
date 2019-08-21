@@ -29,7 +29,7 @@ export default function ThemeProvider({ theme = {}, breakpoints: customBreakpoin
       let [, width] = Object.entries(breakpoints)[index];
 
       return (strings, ...values) => {
-        if (!["ios", "android"].includes(Platform.OS) && deviceWidth >= width) {
+        if (Platform.OS === "web" && deviceWidth >= width) {
           return strings.reduce((result, string, i) => {
             return `${result}${string}${values[i] || ""}`;
           }, "");

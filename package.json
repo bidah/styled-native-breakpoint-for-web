@@ -2,9 +2,23 @@
   "name": "styled-native-breakpoint-for-web",
   "version": "0.0.1",
   "description": "Add breakpoints to your styled components to use for the web in your Universal Expo Web project",
-  "main": "index.js",
+  "main": "src/index.js",
   "repository": "https://github.com/bidah/styled-components-mq-for-web",
   "author": "Rodrigo Figueroa",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "peerDependencies": {
+    "react-native": "*",
+    "fbjs": "*"
+  },
+  "keywords": [
+    "expo",
+    "react-native-web",
+    "react-native",
+    "styled-components",
+    "breakpoints",
+    "media-queries",
+    "react",
+    "style"
+  ]
 }

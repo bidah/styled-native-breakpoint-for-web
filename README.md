@@ -101,3 +101,7 @@ const MyComponent = styled.View`
 ## Demo
 
 <https://snack.expo.io/@bidah/styled-native-bp-for-web>
+
+## TODO
+
+- Add functionality to setup custom breakpoints in your theme.

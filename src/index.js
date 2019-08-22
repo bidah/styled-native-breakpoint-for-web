@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styled, { ThemeProvider as ThemeProviderStyled } from 'styled-components/native';
+import styled, { ThemeProvider as ThemeProviderStyled } from 'styled-components';
 import { View, Dimensions, Platform, Text } from 'react-native';
 
 function ThemeProvider({ theme = {}, breakpoints: customBreakpoints = {}, children }) {
@@ -24,20 +24,20 @@ function ThemeProvider({ theme = {}, breakpoints: customBreakpoints = {}, childr
     setDeviceWidth(width);
   };
 
-  const OnLayout = styled.View.attrs({ onLayout: handleLayout })`
+  const OnLayout = styled.View`
     flex: 1;
   `;
 
-  const breakpointFactory = () => {
-    // console.log('on factory', breakpoints)
+  var breakpointFactory = () => {
     return Object.entries(breakpoints).reduce((bp, current, index) => {
       let [name, width] = current;
 
       return {
         ...bp,
         [name]: (strings, ...values) => {
+          if (Platform.OS !== 'web') return '';
+
           if (Platform.OS === 'web' && deviceWidth >= width) {
-            console.log('strings', strings);
             if (typeof strings === 'string') return strings;
 
             return strings.reduce((result, string, i) => {
@@ -56,7 +56,7 @@ function ThemeProvider({ theme = {}, breakpoints: customBreakpoints = {}, childr
         ...theme,
         ...{ bp: breakpointFactory() },
       }}>
-      <OnLayout>{children}</OnLayout>
+      <OnLayout onLayout={handleLayout}>{children}</OnLayout>
     </ThemeProviderStyled>
   );
 }

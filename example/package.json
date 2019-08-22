@@ -9,15 +9,16 @@
   },
   "dependencies": {
     "expo": "^34.0.1",
-    "react": "16.8.3",
+    "react": "^16.9.0",
     "react-dom": "^16.8.6",
     "react-native": "https://github.com/expo/react-native/archive/sdk-34.0.0.tar.gz",
     "react-native-web": "^0.11.4",
-    "styled-components": "5.0.0-beta.8",
-    "styled-native-breakpoint-for-web": "../styled-native-breakpoint-for-web-v0.1.1.tgz"
+    "styled-components": "5.0.0-beta.8"
   },
   "devDependencies": {
-    "babel-preset-expo": "^6.0.0"
+    "babel-plugin-module-resolver": "^3.2.0",
+    "babel-preset-expo": "^6.0.0",
+    "escape-string-regexp": "^2.0.0"
   },
   "private": true
 }

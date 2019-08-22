@@ -1,6 +1,6 @@
 # styled-native-breakpoint-for-web
 
-Add breakpoints to your Styled Components to use for the web in your [Universal Expo Web](https://docs.expo.io/versions/v34.0.0/introduction/running-in-the-browser/) project.
+Add breakpoints to your Styled Components to use for the web in your React Native [Universal Expo Web](https://docs.expo.io/versions/v34.0.0/introduction/running-in-the-browser/) project.
 
 ## Introduction
 

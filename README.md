@@ -1,6 +1,6 @@
 # styled-native-breakpoint-for-web
 
-Add breakpoints to your Styled Components to use for the web in your Universal Expo Web project.
+Add breakpoints to your Styled Components to use for the web in your [Universal Expo Web](https://docs.expo.io/versions/v34.0.0/introduction/running-in-the-browser/) project.
 
 ## Introduction
 
@@ -10,39 +10,41 @@ Styled Components media queries are meant to work just for the web so they are o
 
 NOTE: Same as web media queries, by using the library, if you resize your browser window and you hit a breakpoint, layout will change accordingly.
 
-## Instalation
+## Installation
 
 ```
 npm install -s styled-native-breakpoint-for-web
 ```
 
-## Styled Components Usage
+## Usage
 
 Add `ThemeProvider` as a wrapper to `App.js`. If you are already using the `ThemeProvider` component provided by `styled-components/native` replace it with this one.
 
 You can add your theme in the `theme` prop or don't use it at all if you are not using a theme right now.
 
+**Setup without theme:**
+
 ```javascript
 //App.js
-import styled from "styled-components/native";
-import ThemeProvider from "styled-native-breakpoint-for-web";
+import styled from 'styled-components/native';
+import ThemeProvider from 'styled-native-breakpoint-for-web';
 
 <ThemeProvider>// ...your App.js content here</ThemeProvider>;
 ```
 
-Setup with a current theme:
+**Setup with theme:**
 
 ```javascript
 //App.js
-import styled from "styled-components/native";
-import ThemeProvider from "styled-native-breakpoint-for-web";
-import myTheme from "my-theme-path";
+import styled from 'styled-components/native';
+import ThemeProvider from 'styled-native-breakpoint-for-web';
+import myTheme from 'my-theme-path';
 
 <ThemeProvider theme={myTheme}>// ...your App.js content here</ThemeProvider>;
 ```
 
 ```javascript
-import styled from "styled-components/native";
+import styled from 'styled-components/native';
 
 const MyComponent = styled.View`
   flex: 1;
@@ -73,15 +75,14 @@ To setup new breakpoints pass the `breakpoints` prop to `ThemeProvider` with an 
   breakpoints={{
     ipadPro: 1024,
     lgDesktop: 1280,
-    xlDesktop: 1336
-  }}
->
+    xlDesktop: 1336,
+  }}>
   // ...your App.js content here
 </ThemeProvider>
 ```
 
 ```javascript
-import styled from "styled-components/native";
+import styled, { css } from 'styled-components/native';
 
 const MyComponent = styled.View`
   flex: 1;
@@ -99,4 +100,4 @@ const MyComponent = styled.View`
 
 ## Demo
 
-Expo snack
+<https://snack.expo.io/@bidah/styled-native-bp-for-web>

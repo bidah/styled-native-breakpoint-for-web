@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled, { ThemeProvider as ThemeProviderStyled } from 'styled-components/native';
-import { View, Dimensions, Platform } from 'react-native';
+import { View, Dimensions, Platform, Text } from 'react-native';
 
 function ThemeProvider({ theme = {}, breakpoints: customBreakpoints = {}, children }) {
   let [deviceWidth, setDeviceWidth] = useState(0);
@@ -29,18 +29,25 @@ function ThemeProvider({ theme = {}, breakpoints: customBreakpoints = {}, childr
   `;
 
   const breakpointFactory = () => {
-    return breakpoints.map((bp, index) => {
-      let [, width] = Object.entries(breakpoints)[index];
+    // console.log('on factory', breakpoints)
+    return Object.entries(breakpoints).reduce((bp, current, index) => {
+      let [name, width] = current;
 
-      return (strings, ...values) => {
-        if (Platform.OS === 'web' && deviceWidth >= width) {
-          return strings.reduce((result, string, i) => {
-            return `${result}${string}${values[i] || ''}`;
-          }, '');
-        }
-        return '';
+      return {
+        ...bp,
+        [name]: (strings, ...values) => {
+          if (Platform.OS === 'web' && deviceWidth >= width) {
+            console.log('strings', strings);
+            if (typeof strings === 'string') return strings;
+
+            return strings.reduce((result, string, i) => {
+              return `${result}${string}${values[i] || ''}`;
+            }, '');
+          }
+          return '';
+        },
       };
-    });
+    }, {});
   };
 
   return (

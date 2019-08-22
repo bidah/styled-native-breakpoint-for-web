@@ -29,7 +29,7 @@ You can add your theme in the `theme` prop or don't use it at all if you are not
 import styled from 'styled-components/native';
 import ThemeProvider from 'styled-native-breakpoint-for-web';
 
-<ThemeProvider>// ...your App.js content here</ThemeProvider>;
+<ThemeProvider>...your App.js content here</ThemeProvider>;
 ```
 
 **Setup with theme:**
@@ -40,7 +40,7 @@ import styled from 'styled-components/native';
 import ThemeProvider from 'styled-native-breakpoint-for-web';
 import myTheme from 'my-theme-path';
 
-<ThemeProvider theme={myTheme}>// ...your App.js content here</ThemeProvider>;
+<ThemeProvider theme={myTheme}>...your App.js content here</ThemeProvider>;
 ```
 
 ```javascript

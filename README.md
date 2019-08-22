@@ -104,4 +104,5 @@ const MyComponent = styled.View`
 
 ## TODO
 
-- Add functionality to setup custom breakpoints in your theme.
+- Add functionality to setup custom breakpoints in theme.
+- Example folder running but only in Simulator. Got stuck running Expo web.

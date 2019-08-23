@@ -4,7 +4,7 @@ Add breakpoints to your Styled Components to use for the web in your React Nativ
 
 ## Introduction
 
-When creating a [Expo](https://expo.io/) universal app using [Styled Components](https://github.com/styled-components/styled-components) you need desktop breakpoints to deliver a good experience for the web. Your mobile layout is just meant for the mobile web, you are missing the desktop view.
+When creating a [Expo](https://expo.io/) universal app using [Styled Components](https://github.com/styled-components/styled-components) you need desktop breakpoints to deliver a good experience for the web. Your mobile layout is just meant for the mobile web, you are missing our old pal the desktop view.
 
 Styled Components media queries are meant to work just for the web so they are of no use when creating styled components that need breakpoints to work with [React Native For Web](https://github.com/necolas/react-native-web) which is what Expo is using to create your web build.
 

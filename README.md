@@ -47,8 +47,8 @@ import styled from 'styled-components/native';
 const MyComponent = styled.View`
   flex: 1;
   background: orangered;
-  ${({ theme: { mq } }) =>
-    mq.desktop(css`
+  ${({ theme: { bp } }) =>
+    bp.desktop(css`
       background: deepskyblue;
     `)}
 `;
@@ -56,7 +56,7 @@ const MyComponent = styled.View`
 
 ## Custom breakpoints
 
-By default you get to use 3 breakpoints from `mq` that have the following values.
+By default you get to use 3 breakpoints from `bp` that have the following values.
 
 ```javascript
 {
@@ -85,12 +85,12 @@ import styled, { css } from 'styled-components/native';
 const MyComponent = styled.View`
   flex: 1;
   background: orangered;
-  ${({ theme: { mq } }) =>
-    mq.ipadPro(css`
+  ${({ theme: { bp } }) =>
+    bp.ipadPro(css`
       background: deepskyblue;
     `)}
-  ${({ theme: { mq } }) =>
-    mq.xlDesktop(css`
+  ${({ theme: { bp } }) =>
+    bp.xlDesktop(css`
       background: lime;
     `)}
 `;

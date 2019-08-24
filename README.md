@@ -104,4 +104,5 @@ const MyComponent = styled.View`
 
 - Add functionality to setup custom breakpoints in theme.
 - Example folder running but only in Simulator. Got stuck running Expo web.
+- Add compatibility for Emotion
 - Add tests

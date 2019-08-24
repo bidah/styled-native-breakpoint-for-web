@@ -28,7 +28,7 @@ function ThemeProvider({ theme = {}, breakpoints: customBreakpoints = {}, childr
     flex: 1;
   `;
 
-  var breakpointFactory = () => {
+  const breakpointFactory = () => {
     return Object.entries(breakpoints).reduce((bp, current, index) => {
       let [name, width] = current;
 

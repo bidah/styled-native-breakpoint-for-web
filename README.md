@@ -106,9 +106,13 @@ import { withTheme } from 'styled-components/native';
 export default withTheme(MyComponent);
 ```
 
+With this you will have the `theme` prop available to consume `bp` later.
+
 Then when using the `css` prop simply add an interpolation with `theme.bp.lgDesktop()`
 
 ```javascript
+let {theme} = this.props;
+...
 <View css={css`
   align-self: center;
   ${theme.bp.lgDesktop(css`

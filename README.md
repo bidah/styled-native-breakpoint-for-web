@@ -16,7 +16,7 @@ We are also emulating the responsiveness of web media queries behaviour, so if y
 npm install -s styled-native-breakpoint-for-web
 ```
 
-## Usage
+## Usage with `styled`
 
 Add `ThemeProvider` as a wrapper to `App.js`. If you are already using the `ThemeProvider` component provided by `styled-components/native` replace it with this one.
 

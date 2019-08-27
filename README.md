@@ -110,14 +110,13 @@ Then when using the css tag literal in the css prop simply add an interpolation 
 Then when using the `css` prop simply add an interpolation with `theme.bp.lgDesktop()`
 
 ```javascript
-<View>
-  css=
-  {css`
-    align-self: center;
-    ${theme.bp.lgDesktop(css`
-      align-self: flex-start;
-    `)}
-  `}
+<View css={css`
+  align-self: center;
+  ${theme.bp.lgDesktop(css`
+    align-self: flex-start;
+  `)}
+`}
+/>
 </View>
 ```
 

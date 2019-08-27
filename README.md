@@ -54,6 +54,33 @@ const MyComponent = styled.View`
 `;
 ```
 
+## Usage with `css` prop
+
+import `withTheme` from `styled-components/native` and export your component using the HOC.
+
+```javascript
+import { withTheme } from 'styled-components/native';
+//...rest of MyComponent code
+export default withTheme(MyComponent);
+```
+
+With this you will have the `theme` prop available to consume `bp` later.
+
+Then when using the `css` prop simply add an interpolation with `theme.bp.lgDesktop()`
+
+```javascript
+let {theme} = this.props;
+...
+<View css={css`
+  align-self: center;
+  ${theme.bp.lgDesktop(css`
+    align-self: flex-start;
+  `)}
+`}
+/>
+</View>
+```
+
 ## Custom breakpoints
 
 By default you get to use 3 breakpoints from `bp` that have the following values.
@@ -94,33 +121,6 @@ const MyComponent = styled.View`
       background: lime;
     `)}
 `;
-```
-
-## Usage with `css` prop
-
-import `withTheme` from `styled-components/native` and export your component using the HOC.
-
-```javascript
-import { withTheme } from 'styled-components/native';
-//...rest of MyComponent code
-export default withTheme(MyComponent);
-```
-
-With this you will have the `theme` prop available to consume `bp` later.
-
-Then when using the `css` prop simply add an interpolation with `theme.bp.lgDesktop()`
-
-```javascript
-let {theme} = this.props;
-...
-<View css={css`
-  align-self: center;
-  ${theme.bp.lgDesktop(css`
-    align-self: flex-start;
-  `)}
-`}
-/>
-</View>
 ```
 
 ## Demo

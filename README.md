@@ -8,8 +8,6 @@ When creating a [Expo](https://expo.io/) universal app using [Styled Components]
 
 Styled Components media queries are meant to work just for the web so they are of no use when creating styled components that need breakpoints to work with [React Native For Web](https://github.com/necolas/react-native-web) which is what Expo is using to create your web build.
 
-NOTE: Same as web media queries, by using the library, if you resize your browser window and you hit a breakpoint, layout will change accordingly.
-
 We are also emulating the responsiveness of web media queries behaviour, so if you resize your browser window and you hit a breakpoint, layout will change accordingly.
 
 ## Installation

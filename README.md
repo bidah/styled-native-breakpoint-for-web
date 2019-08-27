@@ -10,6 +10,8 @@ Styled Components media queries are meant to work just for the web so they are o
 
 NOTE: Same as web media queries, by using the library, if you resize your browser window and you hit a breakpoint, layout will change accordingly.
 
+We are also emulating the responsiveness of web media queries behaviour, so if you resize your browser window and you hit a breakpoint, layout will change accordingly.
+
 ## Installation
 
 ```

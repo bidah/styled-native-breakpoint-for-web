@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styled, { ThemeProvider as ThemeProviderStyled } from 'styled-components';
+import styled, { ThemeProvider as ThemeProviderStyled } from 'styled-components/native';
 import { View, Dimensions, Platform, Text } from 'react-native';
 
 function ThemeProvider({ theme = {}, breakpoints: customBreakpoints = {}, children }) {

@@ -106,7 +106,6 @@ import { withTheme } from 'styled-components/native';
 export default withTheme(MyComponent);
 ```
 
-Then when using the css tag literal in the css prop simply add an interpolation with `theme.bp.lgDesktop()`
 Then when using the `css` prop simply add an interpolation with `theme.bp.lgDesktop()`
 
 ```javascript

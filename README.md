@@ -96,6 +96,30 @@ const MyComponent = styled.View`
 `;
 ```
 
+## Usage with `css` prop
+
+import `withTheme` from `styled-components/native` and export your component using the HOC.
+
+```javascript
+import { withTheme } from 'styled-components/native';
+//...rest of MyComponent code
+export default withTheme(MyComponent);
+```
+
+Then when using the css tag literal in the css prop simply add an interpolation with `theme.bp.lgDesktop()`
+
+```javascript
+<View>
+  css=
+  {css`
+    align-self: center;
+    ${theme.bp.lgDesktop(css`
+      align-self: flex-start;
+    `)}
+  `}
+</View>
+```
+
 ## Demo
 
 <https://snack.expo.io/@bidah/styled-native-bp-for-web>

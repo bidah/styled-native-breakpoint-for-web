@@ -56,10 +56,10 @@ const MyComponent = styled.View`
 
 ## Usage with `css` prop
 
-import `withTheme` from `styled-components/native` and export your component using the HOC.
+import `withTheme` and `css` from `styled-components/native` and export your component using the HOC.
 
 ```javascript
-import { withTheme } from 'styled-components/native';
+import { withTheme, css } from 'styled-components/native';
 //...rest of MyComponent code
 export default withTheme(MyComponent);
 ```
